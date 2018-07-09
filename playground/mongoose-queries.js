@@ -2,7 +2,7 @@ const {ObjectID} = require("mongodb")
 const {mongoose} = require("./../server/db/mongoose");
 const {Todo} = require("./../server/models/todo");
 const {Users} = require("./../server/models/user");
-var id = "5b4376a0daffc120b0842be";
+var id = "6b436c2a40de811dd42a85e3";
 // Todo.find({
 //   _id:id
 // }).then((todos)=>{
@@ -20,9 +20,8 @@ var id = "5b4376a0daffc120b0842be";
 // }
 //
 
-Users.findById(id).then((user)=>{
-   if(!user){
-     return console.log("sorry");
-   }
-   console.log(JSON.stringify(user,undefined,2));
- }).catch((e)=>console.log("sorry hi"));
+Todo.findById(id).then((todo)=>{
+  console.log(todo);
+},(err)=>{
+  console.log("shit");
+});
