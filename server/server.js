@@ -91,16 +91,16 @@ app.patch('/todos/:id',(req,res)=>{
     if(!todo)
     {
 
-      console.log("Null");
-      return res.status(404).send({hi:"hi"});
+      
+      return res.status(404).send();
     }
-    console.log("Not null");
+
     res.send({todo});
 
 
   }).catch((e)=>{
-    res.status(404).send({hi:"hi"});
-    console.log(e);
+    res.status(404).send();
+
   })
 });
 
