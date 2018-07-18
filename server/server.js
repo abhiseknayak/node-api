@@ -79,7 +79,7 @@ app.patch('/todos/:id',(req,res)=>{
   var id=req.params.id;
   var body = _.pick(req.body,['text','completed']);
   if(!ObjectID.isValid(id))
-    res.status(404).send();
+    res.status(404).send({hi;"hi"});
   if(_.isBoolean(body.completed) && body.completed){
     body.completedAt=new Date().getTime();
   }
@@ -92,14 +92,14 @@ app.patch('/todos/:id',(req,res)=>{
     {
 
       console.log("Null");
-      return res.status(404).send();
+      return res.status(404).send({hi;"hi"});
     }
     console.log("Not null");
     res.send({todo});
 
 
   }).catch((e)=>{
-    res.status(404).send();
+    res.status(404).send({hi;"hi"});
     console.log(e);
   })
 });
